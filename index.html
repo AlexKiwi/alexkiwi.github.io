@@ -259,6 +259,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/26/StringIO和BytesIO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="孙磊">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kiwi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/26/StringIO和BytesIO/" itemprop="url">StringIO和BytesIO</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-26T15:00:09+08:00">
+                2018-10-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="StringIO和BytesIO"><a href="#StringIO和BytesIO" class="headerlink" title="StringIO和BytesIO"></a>StringIO和BytesIO</h3><p>在日常工作中我们经常需要读写数据，我们对于把数据写到本地文件和从文件中读取数据的操作经常见到，但是有时候我们不需要经数据存到本地，这时候我们可以把数据存到内存中，我们就需要用StrtingIO和BytesIO</p>
+<p>使用 <code>io.StringIO()</code> 和 <code>io.BytesIO()</code> 类来创建类文件对象操作字符串数据。比如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = io.StringIO()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s.write(<span class="string">'Hello World\n'</span>)</span><br><span class="line"><span class="number">12</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'This is a test'</span>, file=s)</span><br><span class="line"><span class="number">15</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># Get all of the data written so far</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s.getvalue()</span><br><span class="line"><span class="string">'Hello World\nThis is a test\n'</span></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># Wrap a file interface around an existing string</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = io.StringIO(<span class="string">'Hello\nWorld\n'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s.read(<span class="number">4</span>)</span><br><span class="line"><span class="string">'Hell'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s.read()</span><br><span class="line"><span class="string">'o\nWorld\n'</span></span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+<p><code>io.StringIO</code> 只能用于文本。如果你要操作二进制数据，要使用 <code>io.BytesIO</code> 类来代替。比如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = io.BytesIO()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s.write(<span class="string">b'binary data'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s.getvalue()</span><br><span class="line"><span class="string">b'binary data'</span></span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><p>当你想模拟一个普通的文件的时候 <code>StringIO</code> 和 <code>BytesIO</code> 类是很有用的。 比如，在单元测试中，你可以使用 <code>StringIO</code> 来创建一个包含测试数据的类文件对象， 这个对象可以被传给某个参数为普通文件对象的函数。</p>
+<p>需要注意的是， <code>StringIO</code> 和 <code>BytesIO</code> 实例并没有正确的整数类型的文件描述符。 因此，它们不能在那些需要使用真实的系统级文件如文件，管道或者是套接字的程序中使用。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/23/Django前后端的图片存储问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -673,7 +799,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
