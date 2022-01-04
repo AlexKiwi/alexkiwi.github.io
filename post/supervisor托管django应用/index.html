@@ -1,0 +1,671 @@
+<!doctype html><html lang=zh-cn dir=content/zh-cn>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> Supervisor托管Django应用 - 热爱生活与梦想 </title>
+<meta name=keywords content="博客,程序员,架构师,思考,读书,笔记,技术,分享,大数据,产品">
+<meta name=author content="凡梦星尘">
+<meta property="og:title" content="Supervisor托管Django应用">
+<meta property="og:site_name" content="热爱生活与梦想">
+<meta property="og:image" content="/img/author.jpg">
+<meta name=title content="Supervisor托管Django应用 - 热爱生活与梦想">
+<meta name=description content="欢迎来到凡梦星尘空间站，个人主要专注于程序开发，产品，售前及大数据解决方案。">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
+<link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
+<link href=/css/main.css rel=stylesheet type=text/css>
+<link href=/css/syntax.css rel=stylesheet type=text/css>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=multi-lang-switch>
+<i class="fa fa-fw fa-language" style=margin-right:5px></i>
+<a class=lang-link id=zh-cn href=#>中文</a>
+</div>
+<div class=custom-logo-site-title>
+<a href=/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
+<span class=site-title>热爱生活与梦想</span>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>没有伞的孩子要学会努力奔跑!</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a href=/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页
+</a>
+</li>
+<li class=menu-item>
+<a href=/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档
+</a>
+</li>
+<li class=menu-item>
+<a href=/about.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我
+</a>
+</li>
+<li class=menu-item>
+<a href=/404.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益404
+</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜索</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=http://next.lisenhui.cn/post/supervisor%E6%89%98%E7%AE%A1django%E5%BA%94%E7%94%A8/ itemprop=url>
+Supervisor托管Django应用
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-12-19">
+2021-12-19
+</time>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>2769 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>6分钟</span>
+</span>
+<span id=/post/supervisor%E6%89%98%E7%AE%A1django%E5%BA%94%E7%94%A8/ class=leancloud_visitors data-flag-title=Supervisor托管Django应用>
+|
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>Supervisor 是用Python开发的一套通用的进程管理程序，能将一个普通的命令行进程变为后台daemon，并监控进程状态并且异常退出时能自动重启，也很适合部署celery。</p>
+<h1 id=环境>环境</h1>
+<p>本文所演示的环境文centos，python2.7版本</p>
+<h1 id=安装>安装</h1>
+<p>本文使用pip安装，也可使用yum</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>pip install supervisor复制代码
+</code></pre></div><p>安装完毕后，查看版本如下：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>pip3 list <span style=color:#666>|</span> grep su
+supervisor              <span style=color:#666>4.0</span>.<span style=color:#666>4</span>   
+</code></pre></div><p>使用pip的安装可能没有设置好supervisor的环境变量，还需要查看一下supervisor安装后的二进制可执行文件在哪里。如果二进制文件本身就在/usr/bin下就说明已经安装好了可以跳过软链接。</p>
+<ul>
+<li>搜索在 <code>/</code> 目录下，前后模糊查询名称为 <code>supervi</code> 的文件，如下：</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>find <span style=color:#666>/</span> <span style=color:#666>-</span>name <span style=color:#b44>&#34;*supervi*&#34;</span> <span style=color:#666>-</span>ls <span style=color:#666>|</span> grep python3 <span style=color:#666>|</span> grep bin
+<span style=color:#666>405327</span>    <span style=color:#666>4</span> <span style=color:#666>-</span>rwxr<span style=color:#666>-</span>xr<span style=color:#666>-</span>x   <span style=color:#666>1</span> root     root          <span style=color:#666>242</span> Oct <span style=color:#666>12</span> <span style=color:#666>18</span><span style=color:#666>:</span><span style=color:#666>42</span> <span style=color:#666>/</span>usr<span style=color:#666>/</span>local<span style=color:#666>/</span>python3<span style=color:#666>/</span>bin<span style=color:#666>/</span>supervisorctl
+<span style=color:#666>405325</span>    <span style=color:#666>4</span> <span style=color:#666>-</span>rwxr<span style=color:#666>-</span>xr<span style=color:#666>-</span>x   <span style=color:#666>1</span> root     root          <span style=color:#666>237</span> Oct <span style=color:#666>12</span> <span style=color:#666>18</span><span style=color:#666>:</span><span style=color:#666>42</span> <span style=color:#666>/</span>usr<span style=color:#666>/</span>local<span style=color:#666>/</span>python3<span style=color:#666>/</span>bin<span style=color:#666>/</span>echo_supervisord_conf
+<span style=color:#666>405328</span>    <span style=color:#666>4</span> <span style=color:#666>-</span>rwxr<span style=color:#666>-</span>xr<span style=color:#666>-</span>x   <span style=color:#666>1</span> root     root          <span style=color:#666>240</span> Oct <span style=color:#666>12</span> <span style=color:#666>18</span><span style=color:#666>:</span><span style=color:#666>42</span> <span style=color:#666>/</span>usr<span style=color:#666>/</span>local<span style=color:#666>/</span>python3<span style=color:#666>/</span>bin<span style=color:#666>/</span>supervisord
+</code></pre></div><ul>
+<li>将 <code>supervisorctl</code>、<code>echo_supervisord_conf</code> 和 <code>supervisord</code> 添加软链到执行目录下/usr/bin</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>ln <span style=color:#666>-</span>s <span style=color:#666>/</span>usr<span style=color:#666>/</span>local<span style=color:#666>/</span>python3<span style=color:#666>/</span>bin<span style=color:#666>/</span>echo_supervisord_conf <span style=color:#666>/</span>usr<span style=color:#666>/</span>bin<span style=color:#666>/</span>echo_supervisord_conf
+ln <span style=color:#666>-</span>s <span style=color:#666>/</span>usr<span style=color:#666>/</span>local<span style=color:#666>/</span>python3<span style=color:#666>/</span>bin<span style=color:#666>/</span>supervisord <span style=color:#666>/</span>usr<span style=color:#666>/</span>bin<span style=color:#666>/</span>supervisord
+ln <span style=color:#666>-</span>s <span style=color:#666>/</span>usr<span style=color:#666>/</span>local<span style=color:#666>/</span>python3<span style=color:#666>/</span>bin<span style=color:#666>/</span>supervisorctl <span style=color:#666>/</span>usr<span style=color:#666>/</span>bin<span style=color:#666>/</span>supervisorctl
+</code></pre></div><p>此时算是安装好了。</p>
+<h1 id=配置>配置</h1>
+<ul>
+<li>
+<p>我的做法是将主配置文件放在/etc/supervisord.conf中，应用配置文件放在/etc/supervisord.d/文件下。echo_supervisord_conf用于生成默认配置，我们生成默认配置并将最后两行引入子进程配置文件的注视去掉</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>mkdir /etc/supervisord.d
+echo_supervisord_conf &gt; /etc/supervisord.conf
+</code></pre></div><p>supervisord.conf中修改的内容</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#666>[</span>include<span style=color:#666>]</span>
+<span style=color:#b8860b>files</span> <span style=color:#666>=</span> supervisord.d/*.ini
+</code></pre></div></li>
+<li>
+<p>再来配置应用配置文件</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#080;font-style:italic># 创建文件</span>
+vim /etc/supervisord.d/demo.ini
+
+<span style=color:#080;font-style:italic># 文件中配置的内容</span>
+<span style=color:#666>[</span>program:demo<span style=color:#666>]</span>
+<span style=color:#b8860b>command</span><span style=color:#666>=</span>/root/pyenv/demo/bin/gunicorn config.wsgi -c config/gunicorn_conf.py
+<span style=color:#b8860b>directory</span><span style=color:#666>=</span>/data/web/demo/coding                ; directory to cwd to before <span style=color:#a2f>exec</span> <span style=color:#666>(</span>def no cwd<span style=color:#666>)</span>
+<span style=color:#b8860b>autostart</span><span style=color:#666>=</span><span style=color:#a2f>true</span>                ; start at supervisord start <span style=color:#666>(</span>default: <span style=color:#a2f>true</span><span style=color:#666>)</span>
+<span style=color:#b8860b>autorestart</span><span style=color:#666>=</span><span style=color:#a2f>true</span>              ; retstart at unexpected quit <span style=color:#666>(</span>default: <span style=color:#a2f>true</span><span style=color:#666>)</span>
+<span style=color:#b8860b>startsecs</span><span style=color:#666>=</span><span style=color:#666>10</span>                  ; number of secs prog must stay running <span style=color:#666>(</span>def. 1<span style=color:#666>)</span>
+<span style=color:#b8860b>startretries</span><span style=color:#666>=</span><span style=color:#666>3</span>                ; max <span style=color:#080;font-style:italic># of serial start failures (default 3)</span>
+<span style=color:#b8860b>stopwaitsecs</span><span style=color:#666>=</span><span style=color:#666>600</span>               ; max num secs to <span style=color:#a2f>wait</span> b4 SIGKILL <span style=color:#666>(</span>default 10<span style=color:#666>)</span>
+<span style=color:#b8860b>stdout_logfile</span><span style=color:#666>=</span>/logs/demo.log        ; stdout log path, NONE <span style=color:#a2f;font-weight:700>for</span> none; default AUTO
+</code></pre></div></li>
+<li>
+<p>我使用的是gunicorn来部署应用，需要在应用根目录下配置gunicorn配置文件</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#080;font-style:italic># 创建文件</span>
+vim config/gunicorn_conf.py
+
+<span style=color:#080;font-style:italic># 文件内容</span>
+<span style=color:#080;font-style:italic># -*- coding: utf-8 -*-</span>
+import multiprocessing
+
+
+<span style=color:#a2f>bind</span> <span style=color:#666>=</span> <span style=color:#b44>&#34;0.0.0.0:8100&#34;</span>
+<span style=color:#b8860b>workers</span> <span style=color:#666>=</span> <span style=color:#666>3</span>
+<span style=color:#b8860b>loglevel</span> <span style=color:#666>=</span> <span style=color:#b44>&#34;debug&#34;</span>
+
+<span style=color:#b8860b>worker_connections</span> <span style=color:#666>=</span> <span style=color:#666>1000</span>
+<span style=color:#b8860b>timeout</span> <span style=color:#666>=</span> <span style=color:#666>50</span>
+<span style=color:#b8860b>keepalive</span> <span style=color:#666>=</span> <span style=color:#666>2</span>
+</code></pre></div></li>
+<li>
+<p>另外这里是我主配置文件的全部内容，仅供参考</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>
+; Sample supervisor config file.
+;
+; For more information on the config file, please see:
+; http://supervisord.org/configuration.html
+;
+; Notes:
+;  - Shell expansion <span style=color:#666>(</span><span style=color:#b44>&#34;~&#34;</span> or <span style=color:#b44>&#34;</span><span style=color:#b8860b>$HOME</span><span style=color:#b44>&#34;</span><span style=color:#666>)</span> is not supported.  Environment
+;    variables can be expanded using this syntax: <span style=color:#b44>&#34;%(ENV_HOME)s&#34;</span>.
+;  - Quotes around values are not supported, except in the <span style=color:#a2f;font-weight:700>case</span> of
+;    the <span style=color:#b8860b>environment</span><span style=color:#666>=</span> options as shown below.
+;  - Comments must have a leading space: <span style=color:#b44>&#34;a=b ;comment&#34;</span> not <span style=color:#b44>&#34;a=b;comment&#34;</span>.
+;  - Command will be truncated <span style=color:#a2f;font-weight:700>if</span> it looks like a config file comment, e.g.
+;    <span style=color:#b44>&#34;command=bash -c &#39;foo ; bar&#39;&#34;</span> will truncate to <span style=color:#b44>&#34;command=bash -c &#39;foo &#34;</span>.
+;
+; Warning:
+;  Paths throughout this example file use /tmp because it is available on most
+;  systems.  You will likely need to change these to locations more appropriate
+;  <span style=color:#a2f;font-weight:700>for</span> your system.  Some systems periodically delete older files in /tmp.
+;  Notably, <span style=color:#a2f;font-weight:700>if</span> the socket file defined in the <span style=color:#666>[</span>unix_http_server<span style=color:#666>]</span> section below
+;  is deleted, supervisorctl will be unable to connect to supervisord.
+
+<span style=color:#666>[</span>unix_http_server<span style=color:#666>]</span>
+<span style=color:#b8860b>file</span><span style=color:#666>=</span>/var/run/supervisor/supervisor.sock   ; the path to the socket file
+;<span style=color:#b8860b>chmod</span><span style=color:#666>=</span><span style=color:#666>0700</span>                 ; socket file mode <span style=color:#666>(</span>default 0700<span style=color:#666>)</span>
+;<span style=color:#b8860b>chown</span><span style=color:#666>=</span>nobody:nogroup       ; socket file uid:gid owner
+;<span style=color:#b8860b>username</span><span style=color:#666>=</span>user              ; default is no username <span style=color:#666>(</span>open server<span style=color:#666>)</span>
+;<span style=color:#b8860b>password</span><span style=color:#666>=</span><span style=color:#666>123</span>               ; default is no password <span style=color:#666>(</span>open server<span style=color:#666>)</span>
+
+; Security Warning:
+;  The inet HTTP server is not enabled by default.  The inet HTTP server is
+;  enabled by uncommenting the <span style=color:#666>[</span>inet_http_server<span style=color:#666>]</span> section below.  The inet
+;  HTTP server is intended <span style=color:#a2f;font-weight:700>for</span> use within a trusted environment only.  It
+;  should only be bound to localhost or only accessible from within an
+;  isolated, trusted network.  The inet HTTP server does not support any
+;  form of encryption.  The inet HTTP server does not use authentication
+;  by default <span style=color:#666>(</span>see the <span style=color:#b8860b>username</span><span style=color:#666>=</span> and <span style=color:#b8860b>password</span><span style=color:#666>=</span> options to add authentication<span style=color:#666>)</span>.
+;  Never expose the inet HTTP server to the public internet.
+
+;<span style=color:#666>[</span>inet_http_server<span style=color:#666>]</span>         ; inet <span style=color:#666>(</span>TCP<span style=color:#666>)</span> server disabled by default
+;<span style=color:#b8860b>port</span><span style=color:#666>=</span>127.0.0.1:9001        ; ip_address:port specifier, *:port <span style=color:#a2f;font-weight:700>for</span> all iface
+;<span style=color:#b8860b>username</span><span style=color:#666>=</span>user              ; default is no username <span style=color:#666>(</span>open server<span style=color:#666>)</span>
+;<span style=color:#b8860b>password</span><span style=color:#666>=</span><span style=color:#666>123</span>               ; default is no password <span style=color:#666>(</span>open server<span style=color:#666>)</span>
+
+<span style=color:#666>[</span>supervisord<span style=color:#666>]</span>
+<span style=color:#b8860b>logfile</span><span style=color:#666>=</span>/var/log/supervisor/supervisord.log ; main log file; default <span style=color:#b8860b>$CWD</span>/supervisord.log
+<span style=color:#b8860b>logfile_maxbytes</span><span style=color:#666>=</span>50MB        ; max main logfile bytes b4 rotation; default 50MB
+<span style=color:#b8860b>logfile_backups</span><span style=color:#666>=</span><span style=color:#666>10</span>           ; <span style=color:#080;font-style:italic># of main logfile backups; 0 means none, default 10</span>
+<span style=color:#b8860b>loglevel</span><span style=color:#666>=</span>info                ; log level; default info; others: debug,warn,trace
+<span style=color:#b8860b>pidfile</span><span style=color:#666>=</span>/var/run/supervisord.pid ; supervisord pidfile; default supervisord.pid
+<span style=color:#b8860b>nodaemon</span><span style=color:#666>=</span><span style=color:#a2f>false</span>               ; start in foreground <span style=color:#a2f;font-weight:700>if</span> true; default <span style=color:#a2f>false</span>
+<span style=color:#b8860b>silent</span><span style=color:#666>=</span><span style=color:#a2f>false</span>                 ; no logs to stdout <span style=color:#a2f;font-weight:700>if</span> true; default <span style=color:#a2f>false</span>
+<span style=color:#b8860b>minfds</span><span style=color:#666>=</span><span style=color:#666>1024</span>                  ; min. avail startup file descriptors; default <span style=color:#666>1024</span>
+<span style=color:#b8860b>minprocs</span><span style=color:#666>=</span><span style=color:#666>200</span>                 ; min. avail process descriptors;default <span style=color:#666>200</span>
+;<span style=color:#b8860b>umask</span><span style=color:#666>=</span><span style=color:#666>022</span>                   ; process file creation umask; default <span style=color:#666>022</span>
+;<span style=color:#b8860b>user</span><span style=color:#666>=</span>supervisord            ; setuid to this UNIX account at startup; recommended <span style=color:#a2f;font-weight:700>if</span> root
+;<span style=color:#b8860b>identifier</span><span style=color:#666>=</span>supervisor       ; supervisord identifier, default is <span style=color:#b44>&#39;supervisor&#39;</span>
+;<span style=color:#b8860b>directory</span><span style=color:#666>=</span>/tmp              ; default is not to <span style=color:#a2f>cd</span> during start
+;<span style=color:#b8860b>nocleanup</span><span style=color:#666>=</span><span style=color:#a2f>true</span>              ; don<span style=color:#b44>&#39;t clean up tempfiles at start; default false
+</span><span style=color:#b44>;childlogdir=/tmp            ; &#39;</span>AUTO<span style=color:#b44>&#39; child log dir, default $TEMP
+</span><span style=color:#b44>;environment=KEY=&#34;value&#34;     ; key value pairs to add to environment
+</span><span style=color:#b44>;strip_ansi=false            ; strip ansi escape codes in logs; def. false
+</span><span style=color:#b44>
+</span><span style=color:#b44>; The rpcinterface:supervisor section must remain in the config file for
+</span><span style=color:#b44>; RPC (supervisorctl/web interface) to work.  Additional interfaces may be
+</span><span style=color:#b44>; added by defining them in separate [rpcinterface:x] sections.
+</span><span style=color:#b44>
+</span><span style=color:#b44>[rpcinterface:supervisor]
+</span><span style=color:#b44>supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
+</span><span style=color:#b44>
+</span><span style=color:#b44>; The supervisorctl section configures how supervisorctl will connect to
+</span><span style=color:#b44>; supervisord.  configure it match the settings in either the unix_http_server
+</span><span style=color:#b44>; or inet_http_server section.
+</span><span style=color:#b44>
+</span><span style=color:#b44>[supervisorctl]
+</span><span style=color:#b44>serverurl=unix:///var/run/supervisor/supervisor.sock ; use a unix:// URL  for a unix socket
+</span><span style=color:#b44>;serverurl=http://127.0.0.1:9001 ; use an http:// url to specify an inet socket
+</span><span style=color:#b44>;username=chris              ; should be same as in [*_http_server] if set
+</span><span style=color:#b44>;password=123                ; should be same as in [*_http_server] if set
+</span><span style=color:#b44>;prompt=mysupervisor         ; cmd line prompt (default &#34;supervisor&#34;)
+</span><span style=color:#b44>;history_file=~/.sc_history  ; use readline history if available
+</span><span style=color:#b44>
+</span><span style=color:#b44>; The sample program section below shows all possible program subsection values.
+</span><span style=color:#b44>; Create one or more &#39;</span>real<span style=color:#b44>&#39; program: sections to be able to control them under
+</span><span style=color:#b44>; supervisor.
+</span><span style=color:#b44>
+</span><span style=color:#b44>;[program:theprogramname]
+</span><span style=color:#b44>;command=/bin/cat              ; the program (relative uses PATH, can take args)
+</span><span style=color:#b44>;process_name=%(program_name)s ; process_name expr (default %(program_name)s)
+</span><span style=color:#b44>;numprocs=1                    ; number of processes copies to start (def 1)
+</span><span style=color:#b44>;directory=/tmp                ; directory to cwd to before exec (def no cwd)
+</span><span style=color:#b44>;umask=022                     ; umask for process (default None)
+</span><span style=color:#b44>;priority=999                  ; the relative start priority (default 999)
+</span><span style=color:#b44>;autostart=true                ; start at supervisord start (default: true)
+</span><span style=color:#b44>;startsecs=1                   ; # of secs prog must stay up to be running (def. 1)
+</span><span style=color:#b44>;startretries=3                ; max # of serial start failures when starting (default 3)
+</span><span style=color:#b44>;autorestart=unexpected        ; when to restart if exited after running (def: unexpected)
+</span><span style=color:#b44>;exitcodes=0                   ; &#39;</span>expected<span style=color:#b44>&#39; exit codes used with autorestart (default 0)
+</span><span style=color:#b44>;stopsignal=QUIT               ; signal used to kill process (default TERM)
+</span><span style=color:#b44>;stopwaitsecs=10               ; max num secs to wait b4 SIGKILL (default 10)
+</span><span style=color:#b44>;stopasgroup=false             ; send stop signal to the UNIX process group (default false)
+</span><span style=color:#b44>;killasgroup=false             ; SIGKILL the UNIX process group (def false)
+</span><span style=color:#b44>;user=chrism                   ; setuid to this UNIX account to run the program
+</span><span style=color:#b44>;redirect_stderr=true          ; redirect proc stderr to stdout (default false)
+</span><span style=color:#b44>;stdout_logfile=/a/path        ; stdout log path, NONE for none; default AUTO
+</span><span style=color:#b44>;stdout_logfile_maxbytes=1MB   ; max # logfile bytes b4 rotation (default 50MB)
+</span><span style=color:#b44>;stdout_logfile_backups=10     ; # of stdout logfile backups (0 means none, default 10)
+</span><span style=color:#b44>;stdout_capture_maxbytes=1MB   ; number of bytes in &#39;</span>capturemode<span style=color:#b44>&#39; (default 0)
+</span><span style=color:#b44>;stdout_events_enabled=false   ; emit events on stdout writes (default false)
+</span><span style=color:#b44>;stdout_syslog=false           ; send stdout to syslog with process name (default false)
+</span><span style=color:#b44>;stderr_logfile=/a/path        ; stderr log path, NONE for none; default AUTO
+</span><span style=color:#b44>;stderr_logfile_maxbytes=1MB   ; max # logfile bytes b4 rotation (default 50MB)
+</span><span style=color:#b44>;stderr_logfile_backups=10     ; # of stderr logfile backups (0 means none, default 10)
+</span><span style=color:#b44>;stderr_capture_maxbytes=1MB   ; number of bytes in &#39;</span>capturemode<span style=color:#b44>&#39; (default 0)
+</span><span style=color:#b44>;stderr_events_enabled=false   ; emit events on stderr writes (default false)
+</span><span style=color:#b44>;stderr_syslog=false           ; send stderr to syslog with process name (default false)
+</span><span style=color:#b44>;environment=A=&#34;1&#34;,B=&#34;2&#34;       ; process environment additions (def no adds)
+</span><span style=color:#b44>;serverurl=AUTO                ; override serverurl computation (childutils)
+</span><span style=color:#b44>
+</span><span style=color:#b44>; The sample eventlistener section below shows all possible eventlistener
+</span><span style=color:#b44>; subsection values.  Create one or more &#39;</span>real<span style=color:#b44>&#39; eventlistener: sections to be
+</span><span style=color:#b44>; able to handle event notifications sent by supervisord.
+</span><span style=color:#b44>
+</span><span style=color:#b44>;[eventlistener:theeventlistenername]
+</span><span style=color:#b44>;command=/bin/eventlistener    ; the program (relative uses PATH, can take args)
+</span><span style=color:#b44>;process_name=%(program_name)s ; process_name expr (default %(program_name)s)
+</span><span style=color:#b44>;numprocs=1                    ; number of processes copies to start (def 1)
+</span><span style=color:#b44>;events=EVENT                  ; event notif. types to subscribe to (req&#39;</span>d<span style=color:#666>)</span>
+;<span style=color:#b8860b>buffer_size</span><span style=color:#666>=</span><span style=color:#666>10</span>                ; event buffer queue size <span style=color:#666>(</span>default 10<span style=color:#666>)</span>
+;<span style=color:#b8860b>directory</span><span style=color:#666>=</span>/tmp                ; directory to cwd to before <span style=color:#a2f>exec</span> <span style=color:#666>(</span>def no cwd<span style=color:#666>)</span>
+;<span style=color:#b8860b>umask</span><span style=color:#666>=</span><span style=color:#666>022</span>                     ; <span style=color:#a2f>umask</span> <span style=color:#a2f;font-weight:700>for</span> process <span style=color:#666>(</span>default None<span style=color:#666>)</span>
+;<span style=color:#b8860b>priority</span><span style=color:#666>=</span>-1                   ; the relative start priority <span style=color:#666>(</span>default -1<span style=color:#666>)</span>
+;<span style=color:#b8860b>autostart</span><span style=color:#666>=</span><span style=color:#a2f>true</span>                ; start at supervisord start <span style=color:#666>(</span>default: <span style=color:#a2f>true</span><span style=color:#666>)</span>
+;<span style=color:#b8860b>startsecs</span><span style=color:#666>=</span><span style=color:#666>1</span>                   ; <span style=color:#080;font-style:italic># of secs prog must stay up to be running (def. 1)</span>
+;<span style=color:#b8860b>startretries</span><span style=color:#666>=</span><span style=color:#666>3</span>                ; max <span style=color:#080;font-style:italic># of serial start failures when starting (default 3)</span>
+;<span style=color:#b8860b>autorestart</span><span style=color:#666>=</span>unexpected        ; autorestart <span style=color:#a2f;font-weight:700>if</span> exited after running <span style=color:#666>(</span>def: unexpected<span style=color:#666>)</span>
+;<span style=color:#b8860b>exitcodes</span><span style=color:#666>=</span><span style=color:#666>0</span>                   ; <span style=color:#b44>&#39;expected&#39;</span> <span style=color:#a2f>exit</span> codes used with autorestart <span style=color:#666>(</span>default 0<span style=color:#666>)</span>
+;<span style=color:#b8860b>stopsignal</span><span style=color:#666>=</span>QUIT               ; signal used to <span style=color:#a2f>kill</span> process <span style=color:#666>(</span>default TERM<span style=color:#666>)</span>
+;<span style=color:#b8860b>stopwaitsecs</span><span style=color:#666>=</span><span style=color:#666>10</span>               ; max num secs to <span style=color:#a2f>wait</span> b4 SIGKILL <span style=color:#666>(</span>default 10<span style=color:#666>)</span>
+;<span style=color:#b8860b>stopasgroup</span><span style=color:#666>=</span><span style=color:#a2f>false</span>             ; send stop signal to the UNIX process group <span style=color:#666>(</span>default <span style=color:#a2f>false</span><span style=color:#666>)</span>
+;<span style=color:#b8860b>killasgroup</span><span style=color:#666>=</span><span style=color:#a2f>false</span>             ; SIGKILL the UNIX process group <span style=color:#666>(</span>def <span style=color:#a2f>false</span><span style=color:#666>)</span>
+;<span style=color:#b8860b>user</span><span style=color:#666>=</span>chrism                   ; setuid to this UNIX account to run the program
+;<span style=color:#b8860b>redirect_stderr</span><span style=color:#666>=</span><span style=color:#a2f>false</span>         ; <span style=color:#b8860b>redirect_stderr</span><span style=color:#666>=</span><span style=color:#a2f>true</span> is not allowed <span style=color:#a2f;font-weight:700>for</span> eventlisteners
+;<span style=color:#b8860b>stdout_logfile</span><span style=color:#666>=</span>/a/path        ; stdout log path, NONE <span style=color:#a2f;font-weight:700>for</span> none; default AUTO
+;<span style=color:#b8860b>stdout_logfile_maxbytes</span><span style=color:#666>=</span>1MB   ; max <span style=color:#080;font-style:italic># logfile bytes b4 rotation (default 50MB)</span>
+;<span style=color:#b8860b>stdout_logfile_backups</span><span style=color:#666>=</span><span style=color:#666>10</span>     ; <span style=color:#080;font-style:italic># of stdout logfile backups (0 means none, default 10)</span>
+;<span style=color:#b8860b>stdout_events_enabled</span><span style=color:#666>=</span><span style=color:#a2f>false</span>   ; emit events on stdout writes <span style=color:#666>(</span>default <span style=color:#a2f>false</span><span style=color:#666>)</span>
+;<span style=color:#b8860b>stdout_syslog</span><span style=color:#666>=</span><span style=color:#a2f>false</span>           ; send stdout to syslog with process name <span style=color:#666>(</span>default <span style=color:#a2f>false</span><span style=color:#666>)</span>
+;<span style=color:#b8860b>stderr_logfile</span><span style=color:#666>=</span>/a/path        ; stderr log path, NONE <span style=color:#a2f;font-weight:700>for</span> none; default AUTO
+;<span style=color:#b8860b>stderr_logfile_maxbytes</span><span style=color:#666>=</span>1MB   ; max <span style=color:#080;font-style:italic># logfile bytes b4 rotation (default 50MB)</span>
+;<span style=color:#b8860b>stderr_logfile_backups</span><span style=color:#666>=</span><span style=color:#666>10</span>     ; <span style=color:#080;font-style:italic># of stderr logfile backups (0 means none, default 10)</span>
+;<span style=color:#b8860b>stderr_events_enabled</span><span style=color:#666>=</span><span style=color:#a2f>false</span>   ; emit events on stderr writes <span style=color:#666>(</span>default <span style=color:#a2f>false</span><span style=color:#666>)</span>
+;<span style=color:#b8860b>stderr_syslog</span><span style=color:#666>=</span><span style=color:#a2f>false</span>           ; send stderr to syslog with process name <span style=color:#666>(</span>default <span style=color:#a2f>false</span><span style=color:#666>)</span>
+;<span style=color:#b8860b>environment</span><span style=color:#666>=</span><span style=color:#b8860b>A</span><span style=color:#666>=</span><span style=color:#b44>&#34;1&#34;</span>,B<span style=color:#666>=</span><span style=color:#b44>&#34;2&#34;</span>       ; process environment additions
+;<span style=color:#b8860b>serverurl</span><span style=color:#666>=</span>AUTO                ; override serverurl computation <span style=color:#666>(</span>childutils<span style=color:#666>)</span>
+
+; The sample group section below shows all possible group values.  Create one
+; or more <span style=color:#b44>&#39;real&#39;</span> group: sections to create <span style=color:#b44>&#34;heterogeneous&#34;</span> process groups.
+
+;<span style=color:#666>[</span>group:thegroupname<span style=color:#666>]</span>
+;<span style=color:#b8860b>programs</span><span style=color:#666>=</span>progname1,progname2  ; each refers to <span style=color:#b44>&#39;x&#39;</span> in <span style=color:#666>[</span>program:x<span style=color:#666>]</span> definitions
+;<span style=color:#b8860b>priority</span><span style=color:#666>=</span><span style=color:#666>999</span>                  ; the relative start priority <span style=color:#666>(</span>default 999<span style=color:#666>)</span>
+
+; The <span style=color:#666>[</span>include<span style=color:#666>]</span> section can just contain the <span style=color:#b44>&#34;files&#34;</span> setting.  This
+; setting can list multiple files <span style=color:#666>(</span>separated by whitespace or
+; newlines<span style=color:#666>)</span>.  It can also contain wildcards.  The filenames are
+; interpreted as relative to this file.  Included files *cannot*
+; include files themselves.
+
+<span style=color:#666>[</span>include<span style=color:#666>]</span>
+<span style=color:#b8860b>files</span> <span style=color:#666>=</span> supervisord.d/*.ini                                                                                                
+</code></pre></div></li>
+</ul>
+<h1 id=supervisor>Supervisor</h1>
+<ul>
+<li>
+<p>启动supervisor</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ supervisord
+
+<span style=color:#080;font-style:italic># 有时候启动会报错需要unlink sock 文件</span>
+unlink /var/run/supervisor/supervisor.sock
+</code></pre></div><p>即可运行。</p>
+<blockquote>
+<p>supervisor 默认在以下路径查找配置文件：/usr/etc/supervisord.conf, /usr/supervisord.conf, supervisord.conf, etc/supervisord.conf, /etc/supervisord.conf, /etc/supervisor/supervisord.conf</p>
+</blockquote>
+<p>如需指定主配置文件，则需要使用<code>-c</code>参数：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>$ supervisord -c /etc/supervisord.conf
+</code></pre></div></li>
+<li>
+<p>关闭</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>supervisorctl shutdown
+</code></pre></div></li>
+</ul>
+<h1 id=supervisorctl>Supervisorctl</h1>
+<ul>
+<li>
+<p>启动完supervusior后</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ supervisorctl reread
+$ supervisorctl update
+</code></pre></div><p>这两个命令分别代表重新读取配置、更新子进程组。执行update后输出：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>demo: added process group
+</code></pre></div></li>
+<li>
+<p>然后启动应用，就完成了！</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ supervisorctl strat demo
+</code></pre></div></li>
+<li>
+<p>以下是supervisorctl的介绍和相关命令</p>
+<p>supervisorctl 是客户端程序，用于向supervisord发起命令。</p>
+<p>通过<code>supervisorctl -h</code>可以查看帮助说明。我们主要关心的是其<code>action</code>命令：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>$ supervisorctl  help
+
+default commands (type help &lt;topic&gt;):
+=====================================
+add    exit      open  reload  restart   start   tail   
+avail  fg        pid   remove  shutdown  status  update 
+clear  maintail  quit  reread  signal    stop    version复制代码
+</code></pre></div><p>这些命令对于控制子进程非常重要。示例:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>reread ;重新加载配置文件
+update ;将配置文件里新增的子进程加入进程组，如果设置了autostart=true则会启动新新增的子进程
+status ;查看所有进程状态
+status &lt;name&gt; ;查看指定进程状态
+start all; 启动所有子进程
+start &lt;name&gt;; 启动指定子进程
+restart all; 重启所有子进程
+restart &lt;name&gt;; 重启指定子进程
+stop all; 停止所有子进程
+stop &lt;name&gt;; 停止指定子进程
+reload ;重启supervisord
+add &lt;name&gt;; 添加子进程到进程组
+reomve &lt;name&gt;; 从进程组移除子进程，需要先stop。注意：移除后，需要使用reread和update才能重新运行该进程复制代码
+</code></pre></div><p>supervisord 有进程组(process group)的概念：只有子进程在进程组，才能被运行。</p>
+<p><code>supervisorctl</code>也支持交互式命令行：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>$ supervisorctl
+demo                        RUNNING   pid 27188, uptime 0:05:09
+supervisor&gt; version
+3.3.4
+supervisor&gt; 
+</code></pre></div></li>
+</ul>
+<h1 id=参考>参考</h1>
+<p><a href=https://juejin.cn/post/6844903745587773448>https://juejin.cn/post/6844903745587773448</a></p>
+</div>
+<footer class=post-footer>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ扫一扫交流</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>声明：</span>Supervisor托管Django应用
+</p>
+<p>
+<span>链接：</span>http://next.lisenhui.cn/post/supervisor%E6%89%98%E7%AE%A1django%E5%BA%94%E7%94%A8/
+</p>
+<p>
+<span>作者：</span>凡梦星尘
+</p>
+<p>
+<span>声明： </span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>赏</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>微信打赏</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>支付宝打赏</p>
+</div>
+</div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=http://next.lisenhui.cn/post/markdown-syntax/ rel=prev title=Markdown语法手册>
+Markdown语法手册
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<section class="site-overview sidebar-panel sidebar-panel-active">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/avatar.png alt=凡梦星尘>
+<p class=site-author-name itemprop=name>凡梦星尘</p>
+<p class="site-description motion-element" itemprop=description>
+再平凡的人也有属于他自己的梦想!
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/post/>
+<span class=site-state-item-count>8</span>
+<span class=site-state-item-name>日志</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/categories/>
+<span class=site-state-item-count>2</span>
+<span class=site-state-item-name>分类</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/tags/>
+<span class=site-state-item-count>7</span>
+<span class=site-state-item-name>标签</span>
+</a>
+</div>
+</nav>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/elkan1788/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+<span class=links-of-author-item>
+<a href=https://www.zhihu.com/people/fan-meng-xing-chen-1 target=_blank title=知乎>
+<i class="fa fa-fw fa-globe"></i>
+知乎
+</a>
+</span>
+</div>
+<div class="links-of-blogroll motion-element links-of-blogroll-inline">
+<div class=links-of-blogroll-title>
+<i class="fa fa-fw fa-globe"></i>
+友情链接
+</div>
+<ul class=links-of-blogroll-list>
+<li class=links-of-blogroll-item>
+<a href=https://nutzam.com/ title=Nutz target=_blank>Nutz</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://jfinal.com/ title=JFinal target=_blank>JFinal</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=http://wendal.net/ title=Wendal target=_blank>Wendal</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://www.liaoxuefeng.com/ title=廖雪峰 target=_blank>廖雪峰</a>
+</li>
+</ul>
+</div>
+<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
+<div class=tagcloud-of-blogroll-title>
+<i class="fa fa-fw fa-tags"></i>
+标签云
+</div>
+<ul class=tagcloud-of-blogroll-list>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/markdown>Markdown</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/css>Css</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/emoji>Emoji</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/html>HTML</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/privacy>Privacy</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/shortcodes>Shortcodes</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/text>Text</a>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2022
+</span>
+<span class=with-love><i class="fa fa-heart"></i></span>
+<span class=copyright-author>热爱生活与梦想</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.86.1</a>
+</span>
+<span class=separator-line>/</span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv>
+<i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span>
+</span>
+<span class=separator-line>/</span>
+<span class=site-pv>
+<i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span>
+</span>
+</div>
+<div class=license-info>
+<span class=storage-info>
+Storage by
+<a href=https://www.ucloud.cn/ style=font-weight:700 target=_blank>UCloud云存储</a>
+</span>
+<span class=separator-line>/</span>
+<span class=license-num>
+<a href=http://beian.miit.gov.cn target=_blank>粤ICP备18047355号</a>
+</span>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<script type=text/javascript src=/js/search.js></script>
+<script type=text/javascript src=/js/affix.js></script>
+<script type=text/javascript src=/js/scrollspy.js></script>
+<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script type=text/javascript>$(function(){detectIE()>0?$.getScript(document.location.protocol+'//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js',function(){new Waline({el:'#wcomments',visitor:!0,avatar:'wavatar',avatarCDN:'https://sdn.geekzu.org/avatar/',avatarForce:!1,wordLimit:'200',placeholder:' 欢迎留下您的宝贵建议，请填写您的昵称和邮箱便于后续交流. ^_^ ',requiredFields:['nick','mail'],serverURL:"Your WalineSerURL",lang:"zh-cn"})}):$('#wcomments').html('抱歉，Waline插件不支持IE或Edge，建议使用Chrome浏览器。')})</script>
+<script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</body>
+</html>
